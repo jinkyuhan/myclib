@@ -37,6 +37,7 @@ typedef struct _adjlist{
     int numOfEdge;
 }AdjList;
 
+
 extern int initAdjList(AdjList* adjlist, int numOfVertex);
 /* This function initialize the adjlist. it makes the head[] and tail[] arrays numOfVertex length.
 Each index of these array is the identification of each vertex.
@@ -48,17 +49,18 @@ extern void insertDirectedEdge(AdjList* adjlist, Edge edge);
 extern void insertUnDirectedEdge(AdjList* adjlist, Edge edge);
 /* This function inserts The edge which has no direction to adjList. */
 
-extern Node* deleteEdge(AdjList* adjlit, Edge edge);
+extern void deleteDirectedEdge(AdjList* adjlist, Edge edge);
 /* This function*/  
-
+extern void deleteUnDirectedEdge(AdjList* adjlist, Edge edge);
 extern Node* searchNode(AdjList adjlist, Edge edge);
 /* This function searches and returns a pointer of a node represents the edge in the adjlist.*/
 
 extern void fprintAllEdges(AdjList adjlist, FILE* f);
 /* This function prints all the edges in adjlist to file f.
 if you want to print these to stdout, you give the 'stdout' argumnet*/
-void* getHead();
-void* getTail();
-void freeAdjList();
+
+void freeAlledge(Node* fromVertex);
+void freeAdjList(AdjList* adjlist, int numOfVertex);
+/* Free all the memory used to make up the adjList*/
 
 #endif
