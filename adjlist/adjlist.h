@@ -19,22 +19,22 @@
 //   head[4]  -> Node{1, 5(weight), linkToNExt} <- tail[4]
 //------------------------------------------------------
 
-typedef struct _node{
-    int toVertex;
-    int weight;
-    struct _node* next;
+typedef struct _node {
+	int toVertex;
+	int weight;
+	struct _node* next;
 }Node;
-typedef struct _edge{
-    int fromVertex;
-    int toVertex;
-    int weight;
+typedef struct _edge {
+	int fromVertex;
+	int toVertex;
+	int weight;
 }Edge;
 
-typedef struct _adjlist{
-    struct _node** head;
-    struct _node** tail;
-    int numOfVertex;
-    int numOfEdge;
+typedef struct _adjlist {
+	struct _node** head;
+	struct _node** tail;
+	int numOfVertex;
+	int numOfEdge;
 }AdjList;
 
 
@@ -50,9 +50,9 @@ extern void insertUnDirectedEdge(AdjList* adjlist, Edge edge);
 /* This function inserts The edge which has no direction to adjList. */
 
 extern void deleteDirectedEdge(AdjList* adjlist, Edge edge);
-/* This function deletes a node which match to the directed edge*/  
+/* This function deletes a node which match to the directed edge*/
 extern void deleteUnDirectedEdge(AdjList* adjlist, Edge edge);
-/* This function deletes a node which match to the undirected edge*/ 
+/* This function deletes a node which match to the undirected edge*/
 extern Node* searchNode(AdjList adjlist, Edge edge);
 /* This function searches and returns a pointer of a node represents the edge in the adjlist.*/
 
