@@ -50,8 +50,9 @@ extern void insertUnDirectedEdge(AdjList* adjlist, Edge edge);
 /* This function inserts The edge which has no direction to adjList. */
 
 extern void deleteDirectedEdge(AdjList* adjlist, Edge edge);
-/* This function*/  
+/* This function deletes a node which match to the directed edge*/  
 extern void deleteUnDirectedEdge(AdjList* adjlist, Edge edge);
+/* This function deletes a node which match to the undirected edge*/ 
 extern Node* searchNode(AdjList adjlist, Edge edge);
 /* This function searches and returns a pointer of a node represents the edge in the adjlist.*/
 
