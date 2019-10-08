@@ -19,20 +19,19 @@
 //   head[4]  -> Node{1, 5(weight), linkToNExt} <- tail[4]
 //------------------------------------------------------
 
-typedef struct _node {
+typedef struct _adjnode {
 	int toVertex;
 	int weight;
-	struct _node* next;
-}Node;
+	struct _adjnode* next;
+}AdjNode;
 typedef struct _edge {
 	int fromVertex;
 	int toVertex;
 	int weight;
 }Edge;
-
 typedef struct _adjlist {
-	struct _node** head;
-	struct _node** tail;
+	struct _adjnode** head;
+	struct _adjnode** tail;
 	int numOfVertex;
 	int numOfEdge;
 }AdjList;
@@ -53,14 +52,14 @@ extern void deleteDirectedEdge(AdjList* adjlist, Edge edge);
 /* This function deletes a node which match to the directed edge*/
 extern void deleteUnDirectedEdge(AdjList* adjlist, Edge edge);
 /* This function deletes a node which match to the undirected edge*/
-extern Node* searchNode(AdjList adjlist, Edge edge);
+extern AdjNode* searchAdjNode(AdjList adjlist, Edge edge);
 /* This function searches and returns a pointer of a node represents the edge in the adjlist.*/
 
 extern void fprintAllEdges(AdjList adjlist, FILE* f);
 /* This function prints all the edges in adjlist to file f.
 if you want to print these to stdout, you give the 'stdout' argumnet*/
 
-void freeAlledge(Node* fromVertex);
+void freeAlledge(AdjNode* fromVertex);
 void freeAdjList(AdjList* adjlist, int numOfVertex);
 /* Free all the memory used to make up the adjList*/
 
