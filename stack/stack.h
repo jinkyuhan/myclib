@@ -16,5 +16,5 @@ typedef struct _stack {
 extern void InitStack(Stack* stack);
 extern int IsEmptyStack(Stack stack);
 extern void PushStack(Stack* stack, Data);
-extern StackNode* PopStack(Stack* stack);
+extern Data PopStack(Stack* stack);
 #endif

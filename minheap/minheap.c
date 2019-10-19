@@ -2,13 +2,13 @@
 #define TRUE 1
 #define FALSE 0
 
-void initMinHeap(MinHeap* heap, int maxSize) {
+void InitMinHeap(MinHeap* heap, int maxSize) {
 	heap->heapTree = (MinHeapNode*)calloc(maxSize, sizeof(MinHeapNode));
 	heap->heapSize = 0;
 }
 
 
-void siftdownMinHeap(MinHeap* heap, int root)
+void SiftdownMinHeap(MinHeap* heap, int root)
 {
 	MinHeapNode siftkey = heap->heapTree[root];
 	int parent = root;
@@ -35,7 +35,7 @@ void siftdownMinHeap(MinHeap* heap, int root)
 	heap->heapTree[parent] = siftkey;
 }
 
-MinHeapNode deleteMinHeap(MinHeap* heap) {
+MinHeapNode DeleteMinHeap(MinHeap* heap) {
 	if (heap->heapSize < 1) {
 		fprintf(stderr, "MinHeap is empty But deleteMinHeap called");
 		exit(1);
@@ -47,20 +47,20 @@ MinHeapNode deleteMinHeap(MinHeap* heap) {
 	return keyout;
 }
 
-void insertMinHeap(MinHeap* heap, MinHeapNode new) {
+void InsertMinHeap(MinHeap* heap, MinHeapNode new) {
 	int child;
 	int parent;
 	heap->heapSize++;
 	child = heap->heapSize;
 	parent = child / 2;
-	while ((parent >= 1) && (new.key < heap->heapTree[parent].key)){
+	while ((parent >= 1) && (new.key < heap->heapTree[parent].key)) {
 		heap->heapTree[child] = heap->heapTree[parent];
 		child = parent;
 		parent = parent / 2;
 	}
 	heap->heapTree[child] = new;
 }
-void printMinHeap(MinHeap heap) {
+void PrintMinHeap(MinHeap heap) {
 	int i;
 	for (i = 1; i <= heap.heapSize; i++)
 	{

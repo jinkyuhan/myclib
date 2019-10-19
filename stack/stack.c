@@ -30,12 +30,15 @@ void PushStack(Stack* stack, Data data) {
 	}
 }
 
-StackNode* PopStack(Stack* stack) {
+Data PopStack(Stack* stack) {
 	StackNode* popNode;
+	Data popData;
 	if (!IsEmptyStack(*stack)) {
 		popNode = stack->top;
 		stack->top = stack->top->prev;
-		return popNode;
+		popData = popNode->data;
+		free(popNode);
+		return popData;
 	}
 	return NULL;
 }

@@ -14,9 +14,9 @@ typedef struct _heap {
 	int heapSize;
 }MinHeap;
 
-extern void initMinHeap(MinHeap* heap, int maxSize);
-extern void siftdownMinHeap(MinHeap* heap, int root);
-extern MinHeapNode deleteMinHeap(MinHeap* heap);
-extern void insertMinHeap(MinHeap* heap, MinHeapNode new);
-extern void printMinHeap(MinHeap heap);
+extern void InitMinHeap(MinHeap* heap, int maxSize);
+extern void SiftdownMinHeap(MinHeap* heap, int root);
+extern MinHeapNode DeleteMinHeap(MinHeap* heap);
+extern void InsertMinHeap(MinHeap* heap, MinHeapNode new);
+extern void PrintMinHeap(MinHeap heap);
 #endif

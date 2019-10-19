@@ -13,9 +13,8 @@ typedef struct _list {
 	struct _listnode* tail;
 }List;
 
-extern void initList(List* list);
-extern void insertListNode(List*, ListNode);
-extern ListNode* searchNode(List, ListNode);
-extern void deleteNode(Node);
-extern void printList(List list);
+extern void InitList(List* list);
+extern void InsertListNode(List*, Data);
+extern ListNode* SearchNode(List, Data);
+extern void PrintList(List list);
 #endif
