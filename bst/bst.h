@@ -3,13 +3,13 @@
 
 typedef int Data;
 
-extern BstNode* BST_root;
 typedef struct _bstnode {
 	Data data;
-	struct _bstnode *leftChild;
-	struct _bstnode *rightChild;
+	struct _bstnode* leftChild;
+	struct _bstnode* rightChild;
 }BstNode;
 
+extern BstNode* BST_root;
 BstNode* createNode(Data data);
 BstNode* insertBST(BstNode* root, Data data);
 BstNode* findMin(BstNode* root);

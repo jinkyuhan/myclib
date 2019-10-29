@@ -20,11 +20,11 @@ BstNode* insertBST(BstNode* root, Data data) {
 	if (root->data < data) {
 		root->rightChild = insertBST(root->rightChild, data);
 	}
-	else if (root->data > data){
+	else if (root->data > data) {
 		root->leftChild = insertBST(root->leftChild, data);
 	}
 	else {
-			fprintf(stderr,"BST에는 중복된 값이 삽입될 수 없습니다.");
+		fprintf(stderr, "BST에는 중복된 값이 삽입될 수 없습니다.");
 	}
 	return root;
 }
@@ -49,17 +49,17 @@ BstNode* deleteBST(BstNode* root, Data data) {
 	if (root == NULL) {
 		return NULL;
 	}
-	
+
 	// Left subBST recursion
-	else if (root->data < data) { 
-		root->rightChild = deleteBST(root, root->rightChild, data);
+	else if (root->data < data) {
+		root->rightChild = deleteBST(root->rightChild, data);
 	}
 	// Right subBST recursion
-	else if (root->data > data) { 
-		root->leftChild = deleteBST(root, root->leftChild, data);
+	else if (root->data > data) {
+		root->leftChild = deleteBST(root->leftChild, data);
 	}
 	// 삭제할 노드 찾음
-	else { 
+	else {
 		//1. 찾은 삭제할 노드가 leaf 노드인 경우
 		if (root->leftChild == NULL && root->rightChild == NULL) {
 			{
@@ -69,8 +69,8 @@ BstNode* deleteBST(BstNode* root, Data data) {
 		}
 
 		// 2. 찾은 삭제할 노드의 자식노드가 1개 일때
-		else if (root->leftChild == NULL || root->rightChild == NULL) { 
-			if (root->rightChild == NULL) {	
+		else if (root->leftChild == NULL || root->rightChild == NULL) {
+			if (root->rightChild == NULL) {
 				temp = root->leftChild;
 			}
 			else {
@@ -81,10 +81,10 @@ BstNode* deleteBST(BstNode* root, Data data) {
 		}
 
 		// 3. 찾은 삭제할 노드의 자식노드가 2개일때
-		else {	
+		else {
 			temp = findMin(root->rightChild);
 			root->data = temp->data;
-			root->rightChild = delete(root->rightChild, temp->data);
+			root->rightChild = deleteBST(root->rightChild, temp->data);
 		}
 	}
 	return root;
@@ -92,9 +92,9 @@ BstNode* deleteBST(BstNode* root, Data data) {
 
 void inorderPrint(BstNode* root) {
 	if (root != NULL) {
-		inorder(root->leftChild);
+		inorderPrint(root->leftChild);
 		printf("%d ", root->data);
-		inorder(root->rightChild);
+		inorderPrint(root->rightChild);
 	}
 }
 

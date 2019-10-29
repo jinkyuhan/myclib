@@ -36,3 +36,12 @@ void PrintList(List list) {
 		curNode = curNode->next;
 	}
 }
+void CleanList(ListNode* head) {
+	if (head == NULL)
+		;
+	else {
+		CleanList(head->next);
+		free(head);
+		head = NULL;
+	}
+}
