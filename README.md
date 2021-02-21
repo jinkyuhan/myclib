@@ -1,2 +1,2 @@
 # myclib
-The library for KNU assignment
+C Library for myself that I used to do assignments of college.
